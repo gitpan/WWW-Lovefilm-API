@@ -3,7 +3,7 @@ package WWW::Lovefilm::API;
 use warnings;
 use strict;
 
-our $VERSION = '0.10';
+our $VERSION = '0.11';
 
 use base qw(Class::Accessor);
 
@@ -536,6 +536,21 @@ This is used to login as a lovefilm user in order to get an access token.
 
 =head2 rest2sugar
 
+=head2 RequestToken
+
+Makes a call to LOVEFiLM to get a token. It returns a hash with the following information required
+when you redirect the user to the LOVEFiLM website
+
+=over 4
+
+=item token        => $token
+
+=item login_url    => $login_url,
+
+=item token_secret => $token_secret
+
+=back
+
 =head2 RequestAccessToken
 
 This method is to be called after the user has been redirected back to your
@@ -707,14 +722,19 @@ L<http://search.cpan.org/dist/WWW-Lovefilm-API>
 
 =head1 COPYRIGHT & LICENSE
 
-Copyright 2009 David Westbrook, all rights reserved.
-copyright 2010 Paul Mooney, all rights reserved.
+=over 4
+
+=item Copyright 2009 David Westbrook, all rights reserved.
+
+=item Copyright 2010 Paul Mooney, all rights reserved.
+
+=back
 
 This program is free software; you can redistribute it and/or modify it
 under the same terms as Perl itself.
 
 This package is a derivative of WWW::Netflix::API, which was created by
-created by David Westbrook.
+David Westbrook.
 
 =cut
 
